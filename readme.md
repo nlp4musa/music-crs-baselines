@@ -57,6 +57,23 @@ source .venv/bin/activate
 uv pip install -e .
 ```
 
+
+### Run Full Inference
+
+Process the entire test dataset with batch inference:
+
+```bash
+# BM25 baseline
+python run_inference.py --tid llama1b_bm25 --batch_size 16
+
+# BERT baseline
+python run_inference.py --tid llama1b_bert --batch_size 16
+```
+
+Results will be saved to `exp/inference/{tid}.json`.
+
+---
+
 ### Run a Demo Query
 Try the baseline system with a simple query:
 
@@ -77,21 +94,6 @@ creating a warm and relaxing ambiance. The tempo is moderate, with a steady beat
 that encourages you to sway to the rhythm....[omitted]
 ```
 
-### Run Full Inference
-
-Process the entire test dataset with batch inference:
-
-```bash
-# BM25 baseline
-python run_inference.py --tid llama1b_bm25 --batch_size 16
-
-# BERT baseline
-python run_inference.py --tid llama1b_bert --batch_size 16
-```
-
-Results will be saved to `exp/inference/{tid}.json`.
-
----
 
 ## 🛠️ Custom Configuration
 
