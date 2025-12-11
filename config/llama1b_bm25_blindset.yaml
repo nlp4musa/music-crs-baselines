@@ -1,0 +1,14 @@
+lm_type: "meta-llama/Llama-3.2-1B-Instruct"
+retrieval_type: "bm25"
+item_db_name: "talkpl-ai/TalkPlayData-Blind-Track-Metadata"
+user_db_name: "talkpl-ai/TalkPlayData-Blind-User-Metadata"
+split_types:
+  - "2026"
+corpus_types:
+  - "track_name"
+  - "artist_name"
+  - "album_name"
+  - "release_date"
+cache_dir: "./cache"
+device: "cuda"
+attn_implementation: "flash_attention_2"

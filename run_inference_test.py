@@ -67,6 +67,8 @@ def main(args):
         - Tracks progress with tqdm progress bar
         - Saves comprehensive results for evaluation
     """
+    print("Removing cache directory for preventing memory issues...")
+    os.system("rm -rf cache")
     config = OmegaConf.load(f"config/{args.tid}.yaml")
     music_crs = load_crs_baseline(
         lm_type=config.lm_type,
@@ -122,7 +124,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--tid",
         type=str,
-        default="llama1b_bm25",
+        default="llama1b_bm25_testset",
         help="Task identifier matching a config file (e.g., 'llama1b_bm25' loads config/llama1b_bm25.yaml)"
     )
     parser.add_argument(

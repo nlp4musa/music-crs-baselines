@@ -1,13 +1,26 @@
 # Music Conversational Recommendation Challenge Baselines
 
-Welcome to the **Music CRS Challenge**! This repository provides baseline systems for building conversational music recommendation systems using the [TalkPlayData-2](https://huggingface.co/datasets/talkpl-ai/TalkPlayData-2) dataset.
+Welcome to the **Music CRS Challenge**! This repository provides baseline systems for building conversational music recommendation systems using the [TalkPlayData-2](https://huggingface.co/datasets/talkpl-ai/TalkPlayData-2) dataset and [TalkPlayData-Blind](https://huggingface.co/collections/talkpl-ai/talkplay-data-challenge).
+
+## 📰 Timeline
+
+- **Task description release**: October 15, 2025
+- **Development dataset release**: October 15, 2025
+- **Baseline system release**: October 15, 2025
+- **Submission site**: December 11, 2025
+- **Blind evaluation dataset release**: December 11, 2025
+- **Final submission deadline**: December 30, 2025
+- **Results notification**: January 30, 2026
+
 
 ## 📋 Challenge Overview
 
 Build a conversational AI that can:
 - Understand user music preferences through natural dialogue
-- Recommend relevant tracks from a [music catalog](https://huggingface.co/datasets/talkpl-ai/TalkPlayData-2-Track-Metadata)
+- Recommend relevant tracks from a music catalog
 - Generate engaging, personalized responses about music
+- Benchmark track: Evaluate on public test sets with known ground truth
+- Blind evaluation track: Test on hidden evaluation data for final ranking
 
 ## Baseline System
 
@@ -46,6 +59,7 @@ The system operates on a **two-stage pipeline**:
 - **Pre-extracted Track Embeddings**: [Track Embeddings](https://huggingface.co/datasets/talkpl-ai/TalkPlayData-2-Track-Embeddings)
 - **User Profiles**: [User Metadata](https://huggingface.co/datasets/talkpl-ai/TalkPlayData-2-User-Metadata)
 - **Pre-extracted User Embeddings**: [User Embeddings](https://huggingface.co/datasets/talkpl-ai/TalkPlayData-2-User-Embeddings)
+- **Blind Dataset**: [TalkPlayData-Blind](https://huggingface.co/datasets/talkpl-ai/TalkPlayData-Blind)
 
 ## 🚀 Quick Start
 
@@ -64,13 +78,19 @@ Process the entire test dataset with batch inference:
 
 ```bash
 # BM25 baseline
-python run_inference.py --tid llama1b_bm25 --batch_size 16
-
+python run_inference_test.py --tid llama1b_bm25_testset --batch_size 16
 # BERT baseline
-python run_inference.py --tid llama1b_bert --batch_size 16
+python run_inference_test.py --tid llama1b_bert_testset --batch_size 16
 ```
 
 Results will be saved to `exp/inference/{tid}.json`.
+
+Also you need to submit blind estimation dataset
+
+```bash
+python run_inference_blind.py --tid llama1b_bert_blindset --batch_size 16
+python run_inference_blind.py --tid llama1b_bm25_blindset --batch_size 16
+```
 
 ---
 
