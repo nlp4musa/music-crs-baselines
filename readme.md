@@ -50,7 +50,7 @@ The system operates on a **two-stage pipeline**:
 - **Track Metadata**: [TalkPlayData-Challenge-Track-Metadata](https://huggingface.co/datasets/talkpl-ai/TalkPlayData-Challenge-Track-Metadata)
 - **User Profiles**: [TalkPlayData-Challenge-User-Metadata](https://huggingface.co/datasets/talkpl-ai/TalkPlayData-Challenge-User-Metadata)
 - **Blind A Dataset**: [TalkPlayData-Challenge-Blind-A](https://huggingface.co/datasets/talkpl-ai/TalkPlayData-Challenge-Blind-A)
-- **Blind B Dataset**: Will be uploaded @ 15 Jun
+- **Blind B Dataset**: [TalkPlayData-Challenge-Blind-B](https://huggingface.co/datasets/talkpl-ai/TalkPlayData-Challenge-Blind-B)
 
 ---
 
@@ -96,10 +96,10 @@ Results are saved to `exp/inference/{tid}.json`.
 
 ```bash
 # BM25 baseline
-python run_inference_blindset.py --tid llama1b_bm25_blindset_A --batch_size 16
+python run_inference_blindset.py --tid llama1b_bm25_blindset_B --batch_size 16
 
 # BERT baseline
-python run_inference_blindset.py --tid llama1b_bert_blindset_A --batch_size 16
+python run_inference_blindset.py --tid llama1b_bert_blindset_B --batch_size 16
 ```
 
 ---

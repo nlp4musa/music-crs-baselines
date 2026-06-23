@@ -1,0 +1,17 @@
+lm_type: "meta-llama/Llama-3.2-1B-Instruct"
+retrieval_type: "bert"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Blind-B"
+item_db_name: "talkpl-ai/TalkPlayData-Challenge-Track-Metadata"
+user_db_name: "talkpl-ai/TalkPlayData-Challenge-User-Metadata"
+track_split_types:
+  - "all_tracks"
+user_split_types:
+  - "all_users"
+corpus_types:
+  - "track_name"
+  - "artist_name"
+  - "album_name"
+  - "release_date"
+cache_dir: "./cache"
+device: "cuda"
+attn_implementation: "flash_attention_2"
